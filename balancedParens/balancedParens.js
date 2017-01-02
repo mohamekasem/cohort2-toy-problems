@@ -23,8 +23,20 @@
  *
  *	"())"
  */
-
  var balancedParens = function (input) {
-	
- };
-	
+ 	var arr=input.split("")
+ 	
+ 	if(arr.length%2!==0){
+ 		return false; 
+ 	}else{
+ 		if(arr[0].includes("(")&&arr[arr.length-1].includes(")"))
+ 			return true;
+  //}
+  return false;
+}
+};
+
+
+function balancedParens1(str){
+
+}
