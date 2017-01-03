@@ -11,7 +11,63 @@
  */
 
 //Works for any number of input strings:
-var commonCharacters = function(string1, string2) {
-  
-};
+// var commonCharacters = function(string1, string2) {
+// 	var arr=(string1+string2).split("")
+// 	var array=[]
+// 	arr=arr.sort(function(a,b){return b-a})
+// 	for(var i=0;i<arr.length;i++){
+// 		if(array.includes(arr[i])) {
+// 			array.push(arr[i])    
+// 		}
 
+// 	}
+// 	return array.join("")
+// }
+function commonCharacters(str,str1){
+	str=str.split("")
+	str1=str1.split("")
+	var arr=[]
+	for(var i=0;i<str.length;i++){
+		for(var j=0;j<str.length;j++){
+			if(str[i]===str1[j]){
+				arr.push(str[i])
+			}
+		}
+	}
+	return arr.join("")
+}
+
+function commonCharacters(arguments){
+	var str=arguments[0]
+	arguments=arguments.replace(/\s/g, '');
+	var arr=[]
+	for (var i=0;i<str.length;i++){
+		for (var j=0;j<arguments.length;j++){
+			if(arguments[j]===str[i]){
+				arr.puh(str[i])
+			}
+		}
+	}
+		return arr.join("")
+
+	}
+// 	return str.join("")
+// 	// var arr=[];
+
+// 	// //	if(arr.indexOf(arguments[i])){
+//  //      arr
+// 	// return arr.join("")
+// }
+
+
+// function commonCharacters(arguments){
+// 	arguments=arguments.replace(/\s/g, '').split("")
+// 	var arr=0
+// 	for(var i=0;i<arguments.length;i++){
+// 		if(arguments[i]===arr[i]){
+// 			return arr
+// 		}else{
+// 			return arr.push(arguments[i])
+// 		}
+// 	}
+// }
