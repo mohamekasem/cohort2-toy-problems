@@ -35,7 +35,7 @@ function commonCharacters(str,str1){
 		}
 	}
 	return arr.join("")
-}
+}-
 
 
 
