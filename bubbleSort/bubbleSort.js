@@ -19,22 +19,65 @@
  *
  * More credits: Do you need to consider every element every time you iterate
  * through the array? Again: Has the time complexity of your algorithm changed?
-*/
+ */
 
-  var a = [34, 203, 3, 746, 200, 984, 198, 764, 9];
+ var a = [34, 203, 3, 746, 200, 984, 198, 764, 9];
 /*
  * Example usage:
  * bubbleSort([2, 1, 3]); // yields [1, 2, 3]
  *
-*/
+ */
 
 // Feel free to add helper functions if needed
+/*function swap(a,b){
+	var temp=a
+	a=b
+	b=temp
 
-var bubbleSort = function(array) {
-  
-};
+}
+function bubbleSort (arr){
+	var array=[]
+	for(var i=0;i<arr.length;i++){
+		//var max=arr[i]
+		for(var j=0;j<arr.length;j++){
+       /*   if(arr[j]>arr[i]){
+       array.unshift(arr[i])
+          }else{
+          	array.push(arr[j])
+          }*//*
+          array.push(swap(arr[i],arr[j]))
+		}
+	}
+	return array
+}*/
+//var bubbleSort = function(array) {
+	//var x=[]
+ // //for(var i=0;array.length;i++){
+  //	return array.reduce(function(acc,el){
+  	//	if(el<acc){
+  	//		x.unshift(el)
+  	//	}else{
+  	//		x.push()
+  	//	}
+  	//},array[0])
+
+ // }
+//};
 
 /*
 
 // Remember to look here http://visualgo.net/sorting
 */
+function bubbleSort(array){
+	var x;
+	var x=array.length
+	for(var i=1;i<x-1;i++){
+		if(array[i-1]>array[i]){
+         x=array[i-1]
+         array[i-1]=array[i]
+         array[i]=x
+		}
+		}
+		return array
+	}
+	
