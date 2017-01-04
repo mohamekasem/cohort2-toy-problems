@@ -42,15 +42,18 @@ function commonCharacters(str,str1){
 
 function cc(arguments){
 	var str=arguments[0]
-	var arr=[]
-	var x=""
-	for(var i=0;i<str.length;i++){
-		for(var j=0;j<arguments.length;j++){
-			if(str[i]===arguments[j]){
-            //arr.push(arguments[j])
-    x+=arguments[j]
-			}
-		}
-	}
-	return x///arr 
+	var x=Array.from(arguments).join("")
+
+	return commonCharacters(str,x)
+	// var arr=[]
+	// var x=""
+	// for(var i=0;i<str.length;i++){
+	// 	for(var j=0;j<arguments.length;j++){
+	// 		if(str[i]===arguments[j]){
+ //            //arr.push(arguments[j])
+ //    x+=arguments[j]
+	// 		}
+	// 	}
+	// }
+	// return x///arr 
 }

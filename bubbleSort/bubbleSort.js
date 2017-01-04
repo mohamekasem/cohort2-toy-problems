@@ -69,15 +69,18 @@ function bubbleSort (arr){
 // Remember to look here http://visualgo.net/sorting
 */
 function bubbleSort(array){
-	var x;
+	var y;
 	var x=array.length
-	for(var i=1;i<x-1;i++){
-		if(array[i-1]>array[i]){
-         x=array[i-1]
-         array[i-1]=array[i]
-         array[i]=x
+
+	for(var i=1;i<x;i++){
+		for(var j=1;j<x;j++){
+		if(array[j-1]>array[i]){
+         y=array[j-1]
+         array[j-1]=array[i]
+         array[i]=y
 		}
 		}
+	}
 		return array
 	}
 	
