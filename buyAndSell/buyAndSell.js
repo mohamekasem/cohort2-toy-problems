@@ -22,25 +22,25 @@
 function getMaxOfArray(numArray) {
 	return Math.max.apply(null, numArray);
 }
+///////////////////////////////////////////
 function getMinOfArray(numArray) {
 
 	return Math.min.apply(null, numArray);
 }
-
+////////////////////////////////////////
 var maximumProfit  = function(array) {
-	var min = getMinOfArray(array);
-	var max =0
-	var x = array.indexOf(min)
-	console.log(x)
-	array = array.slice(x,array.length)
-		for(var i=0 ; i < array.length ; i++){
-console.log(array)
-		max=getMaxOfArray(array)
-			if(min === array.length-1){
-			return 0
-		}else{
-			return max - min  
-		}
-	}
 
+	var min = getMinOfArray(array)
+	
+	index=array.indexOf(min)
+
+	if(index === array.length-1){
+
+		return 0
+	}
+	array=array.slice(index,array.length)
+
+	var max=getMaxOfArray(array)
+
+	return max-min
 }
