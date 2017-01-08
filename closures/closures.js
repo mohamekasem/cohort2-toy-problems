@@ -13,3 +13,9 @@ var cube = pow(3);
 square(3);//should return 9
 cube(3);//should return 27
 */
+function method(num){
+function me(n){
+	return Math.pow(n,num)
+}
+return me
+}
