@@ -64,3 +64,37 @@ jar.getTotalAmount();// should be 400
 jar.getConcentration('apple'); //should be 0.5 or 50%
 jar.getConcentration('banana'); //should be 0.5 or 50%
 */
+
+
+function Jar() {
+  //first steep i will add tha key for my oop
+	 // var obj = {};
+	  this.obj.add = add;
+	  this.Amount = 0;
+	  this.getConcentration = getConcentration;
+	  this.getTotalAmount = getTotalAmount;
+	  this.storeg = {};
+	 	 
+}
+
+ ///function add
+ Jar.prototype.add(n,fru){
+	 	this.Amount +=n
+		 this.storeg[fru]=n
+	 	};
+
+Jar.prototype.getConcentration(fru){
+	 	var x = Object.keys(this.storeg).length
+	 		for(var key in this.storeg){
+	 			 if(key === fru){
+	  	
+			return 100/x+"%";
+				}
+
+			 }
+		 return "0";
+};
+
+Jar.prototype.getTotalAmount(){
+	return this.Amount
+};
