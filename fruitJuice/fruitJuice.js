@@ -21,9 +21,37 @@ Complete the functions in order to provide this functionality.
 */
 
 function Jar() {
-  // TODO
+  //first steep i will add tha key for my oop
+	  var obj = {};
+	  obj.add = add;
+	  obj.Amount = 0;
+	  obj.getConcentration = getConcentration;
+	  obj.getTotalAmount = getTotalAmount;
+	  obj.storeg = {};
+	 	 return obj
 }
 
+ ///function add
+ function add(n,fru){
+	 	this.Amount +=n
+		 this.storeg[fru]=n
+	 	};
+
+ function getConcentration(fru){
+	 	var x = Object.keys(this.storeg).length
+	 		for(var key in this.storeg){
+	 			 if(key === fru){
+	  	
+			return 100/x+"%";
+				}
+
+			 }
+		 return "0";
+};
+
+function getTotalAmount(){
+	return this.Amount
+};
 /*
 These are some tests:
 var jar = new Jar();
