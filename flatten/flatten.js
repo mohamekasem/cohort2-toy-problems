@@ -12,19 +12,12 @@ flatten('a', ['b', 2], 3, null, [[4], ['c']]) // returns ['a', 'b', 2, 3, null, 
 
 */
 
-function flatten(){    ///convert them to sumthing we can del whith them
-	var arr =Array.from(arguments);
-	var array = [];
-	
-	for(var i = 0 ; i < arr.length ; i++){     ////time comx O(n)2 //liner
-     	//know type of elment 
-     	if(typeof arr [i] === "number" || typeof arr[i] === "string"){
-     		array.push(arr[i])
-
-    	}else{
-			///move throw the elm thay arr array 
-			return flatten()
-		}
-	}
-	return array;
+function flatten() {
+  var array = Array.from(arguments);
+  array = JSON.stringify(array);
+  array = array.split('[') .join('').split(']').join('').split(',');
+  for ( let i in array ) {
+    array[i] = JSON.parse( array[i] );
+  }
+  return array;
 }
