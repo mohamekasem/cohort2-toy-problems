@@ -35,23 +35,20 @@ rotate(data, 12478) // => [3, 4, 5, 1, 2]
 
 */
 function rotate(array, steps){
-   									  //know what is inbut && comper
-     var arr = [] 
- 										// var lenNum =// array.slice(steps)
-	for(var i = steps ; i>0;i--){	     /// time Q o(n)
-										//if(steps>0 && steps !== array.length ){
-		arr.push(array)//.length||splice *@*
-    									//arr.push()&& arr.concat(array)
-										//}
+	if (steps>0) {
+		for ( var i = 0; i < steps; i++ ) {
+			array.unshift( array.pop() );
 		}
-		if(steps < 0 && Math.abs(steps) !== array.length){
-
-		}else{
-		
+	}else{
+		for ( var i = 0; i < Math.abs(steps); i++ ) {
+			array.push( array.shift() );
+		}
 	}
-  return arr;
-}
+	return array
+	//Big-O(1)
 
+	//<<<= Show Advanced please  =>>>
+}
 /*
 Problem 2 (Advanced)
 You have to create a function that takes a positive integer number and returns the 
@@ -70,9 +67,20 @@ nextBigger(531)==-1
 */
 
 function nextBigger(num){
-
-	var array = num.toString().split("")
-  	if(array[0]%2!== 0){
-		return parseInt(array.sort(function(a,b){ return b - a}).join(""))
-};
+	var netBiggestStr = ''; 
+	var arr = num.toString().split('');
+	var finalNumber= -1;
+	for ( var i = arr.length - 1; i >= 0; i-- ) {
+		if ( i-1 >=0 ) {
+			if ( Number(arr[i]) > Number(arr[i-1]) ) {
+				var temp = arr[i-1]
+				arr[i-1] = arr[i]
+				arr[i] = temp
+				finalNumber = Number(arr.join(''));
+				break;
+			}
+		}
+	}
+	return finalNumber
+	//Big-O(n)
 }
