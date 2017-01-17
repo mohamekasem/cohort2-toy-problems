@@ -38,7 +38,7 @@ function rotate(array, steps){
    									  //know what is inbut && comper
      var arr = [] 
  										// var lenNum =// array.slice(steps)
-	for(var i = steps ; i>0;i--){	
+	for(var i = steps ; i>0;i--){	     /// time Q o(n)
 										//if(steps>0 && steps !== array.length ){
 		arr.push(array)//.length||splice *@*
     									//arr.push()&& arr.concat(array)
