@@ -35,7 +35,21 @@ rotate(data, 12478) // => [3, 4, 5, 1, 2]
 
 */
 function rotate(array, steps){
+   									  //know what is inbut && comper
+     var arr = [] 
+ 										// var lenNum =// array.slice(steps)
+	for(var i = steps ; i>0;i--){	
+										//if(steps>0 && steps !== array.length ){
+		arr.push(array)//.length||splice *@*
+    									//arr.push()&& arr.concat(array)
+										//}
+		}
+		if(steps < 0 && Math.abs(steps) !== array.length){
 
+		}else{
+		
+	}
+  return arr;
 }
 
 /*
@@ -57,4 +71,8 @@ nextBigger(531)==-1
 
 function nextBigger(num){
 
+	var array = num.toString().split("")
+  	if(array[0]%2!== 0){
+		return parseInt(array.sort(function(a,b){ return b - a}).join(""))
+};
 }
