@@ -5,5 +5,19 @@ Hint the answer is 1366.
 */
 
 var powerOfTwo = function(num){
-
-}
+															///
+  var array = Math.pow(2,num).toString().split("");
+  															// for(var i = 0 ; i < array.length ; i++){
+  															// 	if(typeof (JSON.parse(array[i])) !== 'number'){
+  															// 		array.supstr(i,1)
+  															// 	}
+ 															 // }
+    return array.reduce(function(acc,str){   		///time QM O(n)
+		   														
+		   												 	//	console.log(str)
+		     												//proplem to delet e whin the input 1000
+		    												//if(typeof (JSON.parse(str)) === 'number'){
+		    	return acc+= parseInt(str)
+  															//}
+    },0)
+};
