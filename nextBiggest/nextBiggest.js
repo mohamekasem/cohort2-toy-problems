@@ -65,7 +65,7 @@ nextBigger(9)==-1
 nextBigger(111)==-1
 nextBigger(531)==-1
 */
-
+///stilll from saeed
 function nextBigger(num){
 	var netBiggestStr = ''; 
 	var arr = num.toString().split('');

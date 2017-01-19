@@ -18,7 +18,41 @@
 
 
 var LinkedList = function(){
-  //fill me in!
+//this.value = ???
+ this.head = null ;
+ this.tail = null ;
 };
 
-//write methods here!
+LinkedList.prototype.addToTail = function(value){ //time QM    BIG O(1)
+ 	if(this.head === null){
+		 this.head= Node(value)
+		 this.tail= Node(value)
+  	}else{
+  		this.tail.value=Node(value)
+  	}
+};
+
+LinkedList.prototype.contains = function(value){  //time QM
+	//we shuld to chake on the value 
+  	if(this ){ ///????
+  		return true
+		}
+	return false
+};
+
+
+LinkedList.prototype.removeHead = function(){  //time QM
+ if(this){  //????
+
+ }else{
+ 	this.removeHead()
+ }
+}
+
+
+function Node (value){
+   return {
+	value : value,
+	next :null
+  }
+}
