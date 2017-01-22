@@ -22,5 +22,34 @@ ticTacToe(solvedBoard);//should return 1
 */
 
 function ticTacToe(board){
-	
-};
+ //chak the smpil one
+ //dom idi 
+ var count = 0;
+ var counter = 0;
+  for(var i = 0 ; i < board.length ; i++){    		 //O(n)2
+	  	for(var j = board.length ; j > 0 ; j--){
+	  													//if( board[i][j] === 1 && board[i][j]===1 && board[i][j] === 1){
+	  	 	if(board[i][j] === 1 ){
+	        count++
+	  	 	} 
+	  	 	
+	  	 		
+	  	 	}
+	  	    if(board[i][j] === 2){
+	  	    	counter ++
+	  	    	console.log(counter)
+	  	    }
+	   													// } else if( board[i][j] === 2 && board[i][j] === 2 && board[i][j] === 2){
+	    												//	 return 2
+	     
+	 													//}else{
+	  														//return -1
+  													//}
+	}
+			if(count === 3 ){
+				return 1;
+	  		}else if(counter === 3){
+	        	 return 2;
+	  		}
+	  	 		return -1; 
+}
