@@ -14,8 +14,27 @@ arr = [2,4,3,6,8,2,3,4,8];
 singleNumber(arr);//should return 6 because it only appear once
 */
 function singleNumber(arr){
+var array = [];
+var count = arr.length-1;
+arr = arr.sort(function(a,b){return a-b})
+var x = Math.max.apply(null, arr)
+
+if(x !== arr[arr.length-2]){
+	return	x
+}else if(x === arr[arr.length-2]){
+	arr = singleNumber(arr = arr.splice(-2))
 
 }
+///for(var i = 0 ; i < arr.length ; i++){
+
+ //	arr[i] 										// if(arr[i]===arr[i+1]){ //
+ 											// 	return arr[i]
+ 											//count = arr[i]
+//  }
+return arr 
+}
+//return count
+
 
 /*
 Problem 2 (medium):
@@ -32,7 +51,26 @@ twoSum(nums,9); //should return [0,1] because nums[0] + nums[1] = 2 + 7 = 9;
 */
 
 function twoSum(nums, target){
-
+ var x;
+ var y;
+ var arr = []
+ for(var i = 0 ; i < nums.length ; i++){
+ 	if(arr[i]>target){
+ 	if(arr[i]+arr[i+1] === target){
+ 		x = indexOf(arr[i])
+ 		y = indexOf(arr[i+1])
+ 	  arr.push(x,y)
+ 	}
+ 	else if{
+ 		
+ 		///recurgen th func with splice the 
+ 	}
+ 	
+ 		
+ 	}
+ 		return "no way"
+ }
+ return arr
 }
 
 /*
