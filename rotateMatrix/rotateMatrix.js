@@ -38,6 +38,35 @@
  */
 
 var rotateMatrix =function (matrix) {
-	
+	var arr = []
+	var arr1 = []
+	var arr2 = []
+	var arr3 = []
+   
+	for (var i = matrix.length-1 ; i >= 0 ; i-- ){
+      arr.push(matrix[i][0])
+      arr1.push(matrix[i][1])
+      arr2.push(matrix[i][2])
+      arr3.push(matrix[i][3])
+
+		}								//for (var j = 0 ; j < matrix[i].length; j++){
+			matrix = []
+			matrix.push(arr,arr1,arr2,arr3)
+	return matrix
 }
+    
+
+var rotatedMatrix = function(matrix){
+
+	var temp;
+	for(var i = matrix.length-1 ; i > 0 ; i++){
+		for (var j = 0 ; j < matrix[i].length; j++){
+			temp = matrix[i][j]
+			matrix[i][j]=matrix[j][i]
+			matrix[j][i]=temp
+		}
+	}	
+	return matrix
+}	
+
 ///////////////////
