@@ -27,8 +27,8 @@
  * [ ['D',9,5,1],
  *  ['E','A',6,2],
  *  ['F','B',7,3],
- *  ['G','C',8,4]
- * ]
+  ['G','C',8,4]
+ ]
  * rotatedMatrix[0][0]; // 'D'
  * rotatedMatrix[3][2]; // 8
  *
@@ -37,24 +37,30 @@
  *  - Make your function accept a parameter for the direction of rotation (1 = clockwise, -1 = counterclockwise)
  */
 
-var rotateMatrix =function (matrix) {
-	var arr = []
-	var arr1 = []
-	var arr2 = []
-	var arr3 = []
+// var rotateMatrix =function (matrix) {
+// 	var arr = []
+// 	var arr1 = []
+// 	var arr2 = []
+// 	var arr3 = []
    
-	for (var i = matrix.length-1 ; i >= 0 ; i-- ){
-      arr.push(matrix[i][0])
-      arr1.push(matrix[i][1])
-      arr2.push(matrix[i][2])
-      arr3.push(matrix[i][3])
+// 	for (var i = matrix.length-1 ; i >= 0 ; i-- ){
+//       arr.push(matrix[i][0])
+//       arr1.push(matrix[i][1])
+//       arr2.push(matrix[i][2])
+//       arr3.push(matrix[i][3])
 
-		}								//for (var j = 0 ; j < matrix[i].length; j++){
-			matrix = []
-			matrix.push(arr,arr1,arr2,arr3)
-	return matrix
-}
+// 		}								//for (var j = 0 ; j < matrix[i].length; j++){
+// 			matrix = []
+// 			matrix.push(arr,arr1,arr2,arr3)
+// 	return matrix
+// }
     
+var matrix = [
+   [1,2,3,4],
+  [5,6,7,8],
+  [9,'A','B','C'],
+  ['D','E','F','G']
+ ];
 
 var rotatedMatrix = function(matrix){
 
@@ -66,7 +72,7 @@ var rotatedMatrix = function(matrix){
 			matrix[j][i]=temp
 		}
 	}	
-	return matrix
+	return JSON.stirngfy(matrix)
 }	
 
 ///////////////////
