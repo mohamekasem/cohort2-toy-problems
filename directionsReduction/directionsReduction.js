@@ -10,7 +10,6 @@ In this case, you will just go EAST.
 
 Another example:
 
-plan = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"].
 
 You can immediatly see that going "NORTH" and then "SOUTH" is not reasonable, 
 better stay where you are. So the task is to find a simplified version of the plan. 
@@ -25,10 +24,27 @@ More examples:
 
 dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]) => ["WEST"]
 dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH"]) => [] //don't need to move at all
+//or i have arecurgn i will do the for lop one time and chake theis conflects
 */
+var plan = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]
 
-var dirReduc = function(directions){
-	
-	return directions;
+var dirReduc = function(directions){      //time Q = O(n)2
+	var array = []
+	for(var i = 0 ; i < directions.length ; i++){
+		for(var j = 1 ; j<directions.length ; j++){
+			if(directions[i] === 'NORTH' && directions[j]==='SOUTH' || 
+				directions[i]=== 'EAST'&& directions[j]==='WEST'){
+
+				directions.splice(directions[i],1)
+				directions.splice(directions[j],1)
+				}
+			if(directions[i] === 'SOUTH' && directions[j]==='NORTH'||
+				directions[i]=== 'WEST'&& directions[j]==='EAST')
+			{
+					directions.splice(directions[i],1)
+					directions.splice(directions[j],1)
+			}
+		}
+	}
+return directions;
 };
-
