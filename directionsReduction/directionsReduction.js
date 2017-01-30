@@ -28,23 +28,49 @@ dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH"]) => [] //don't nee
 */
 var plan = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]
 
-var dirReduc = function(directions){      //time Q = O(n)2
-	var array = []
-	for(var i = 0 ; i < directions.length ; i++){
-		for(var j = 1 ; j<directions.length ; j++){
-			if(directions[i] === 'NORTH' && directions[j]==='SOUTH' || 
-				directions[i]=== 'EAST'&& directions[j]==='WEST'){
+// var dirReduc = function(directions){      //time Q = O(n)2
+// 	var array = []
+// 	for(var i = 0 ; i < directions.length ; i++){
+// 		for(var j = 1 ; j<directions.length ; j++){
+// 			if(directions[i] === 'NORTH' && directions[j]==='SOUTH' || 
+// 				directions[i]=== 'EAST'&& directions[j]==='WEST'){
 
-				directions.splice(directions[i],1)
-				directions.splice(directions[j],1)
-				}
-			if(directions[i] === 'SOUTH' && directions[j]==='NORTH'||
-				directions[i]=== 'WEST'&& directions[j]==='EAST')
-			{
-					directions.splice(directions[i],1)
-					directions.splice(directions[j],1)
-			}
-		}
+// 				directions.splice(directions[i],1)
+// 				directions.splice(directions[j],1)
+// 				}
+// 			if(directions[i] === 'SOUTH' && directions[j]==='NORTH'||
+// 				directions[i]=== 'WEST'&& directions[j]==='EAST')
+// 			{
+// 					directions.splice(directions[i],1)
+// 					directions.splice(directions[j],1)
+// 			}
+// 		}
+// 	}
+// return directions;
+// };
+// //////////////////
+
+var dirReduc = function(directions){
+	var array = ["NORTH", "SOUTH", "EAST", "WEST"];
+	// if (directions[0] === "NORTH") {
+	// 	if(directions[directions.length-1] === "EAST" || directions[directions.length-1] === "WEST") {
+	// 		directions = directions.splice(directions.length-1)
+	// 		x.unshift("SOUTH")
+	// 	}
+	// }
+	// if (directions[0] === "SOUTH") {
+	// 	if(directions[directions.length-1] === "EAST" || directions[directions.length-1] === "WEST") {
+	// 		directions = directions.splice(directions.length-1)
+	// 		x.unshift("NORTH")
+	// 	}
+	// }
+	// else if (directions[directions.length-1] === "SOUTH" ||  directions[directions.length-1] === "NORTH" ) {
+	// 		directions = directions.splice(directions.length-1)
+	// 	}
+	if (directions[0] === directions[directions.length-1]){
+		directions = directions.splice(-1)
+		directions.pop()
 	}
-return directions;
+	directions = directions.splice(directions.length-1)
+	return directions;
 };
