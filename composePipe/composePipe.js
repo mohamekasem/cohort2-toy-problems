@@ -35,28 +35,20 @@
   */
 
   'use strict';
-  var add2 = function(number){ return number + 2; }
-  var multiplyBy3 = function(number){ return number * 3; }
+var add2 = function(number){ return number + 2; }
+var multiplyBy3 = function(number){ return number * 3; }
 
-  var pipe = function(func1,func2){
-	//i will dessayd the first input he is th number 
-	//mack all the arg in array whithout firs elm
-	//i need to eterrt on thes func and mack them whith the input
-	//and the return is 
-	var s; 
-	var arg = Array.from(arguments)
-	var integr = arg[0];
-		arg = arg.splice(0,1);
-	//var obj = {}
-	//obj.arg = Array.from(arguments)
-	// obj.integr = obj.arg[0]
-		//obj.arg = obj.arg.splice(0,1)
-	for(var i= 0; i< arg.length; i++){
-       s = arg[i].apply(this, integr); 
-
-	}
-	return s
+var pipe = function(func1,func2){
+  var arrOfFun=Array.from(arguments);
+  return function(x){
+    var result=arrOfFun[0](x);
+  for(var i=1;i<arrOfFun.length;i++){
+          result=arrOfFun[i](result)
+      }
+      return result;  
+  }  
 };
+
 		//obj.integr = obj.arg[i](obj.integr)
    // return obj.integr
 
@@ -68,7 +60,15 @@ var greet = function(name){ return 'hello ' + name;}
 var exclaim = function(statement) { return statement.toUpperCase() + '!';}
 //i thing it's the same sloution
 var compose = function(){
-
+  var arrOfFun=Array.from(arguments);
+  return function(x){
+    var result=arrOfFun[arrOfFun.length-1](x)
+    for(var i=arrOfFun.length-2 ; i>=0 ; i--){//to work with many functions..
+      result=arrOfFun[i](result);
+    }
+    return result;
+  }
+  
 };
 
 
