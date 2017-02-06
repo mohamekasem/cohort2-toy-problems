@@ -4,7 +4,16 @@
  * a prime number, false if it's not.
  */
 var primeTester = function(n) {
+if(n === 2 ){
+	return true
+}
+for(var i=2; i<Math.pow(n,1/2);i++){
+	if(n % i === 0){
+		return false 
+	}
 
+}
+return true
 }
 
  /* Extra credit: Write a function that generates a list of all prime numbers
