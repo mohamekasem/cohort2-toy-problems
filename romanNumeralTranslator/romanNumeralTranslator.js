@@ -16,6 +16,24 @@
  * You should return `null` on invalid input.
  */
 
+var chak = function(array){
+	var count = 0
+	for(var i = 0; i< array.length; i++){
+		 if(array[i] >= array[i+1]){
+
+            	count+=array[i];
+
+            }else if(array[i] < array[i+1] && array.length > 2){
+             	
+             	return null;
+
+            }else if(array[i] < array[i+1]){
+
+             	count = array[i+1] - array[i];
+            }
+	}
+	return count
+}
 var translateRomanNumeral = function(romanNumeral){
 	var DIGIT_VALUES = {
 	  I: 1,
@@ -26,4 +44,34 @@ var translateRomanNumeral = function(romanNumeral){
 	  D: 500,
 	  M: 1000
 	};
+    var array = romanNumeral.split("");
+    
+
+    for(var i = 0; i<array.length; i++){//[	X,X]//[]
+   
+    	for(var key in DIGIT_VALUES){
+    		
+    		if(array[i] === key)
+    			array[i]=DIGIT_VALUES[key];
+    	    }
+    	
+    }
+
+ return chak(array);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
