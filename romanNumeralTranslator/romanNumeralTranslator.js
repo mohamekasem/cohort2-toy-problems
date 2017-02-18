@@ -16,48 +16,53 @@
  * You should return `null` on invalid input.
  */
 
-var chak = function(array){
-	var count = 0
-	for(var i = 0; i< array.length; i++){
-		 if(array[i] >= array[i+1]){
+//  var chak = function(array){
+//      var count = 0
+//      for(var i = 0; i< array.length; i++){
+//        if(array[i] >= array[i+1]){
 
-            	count+=array[i];
+//          count+=array[i];
 
-            }else if(array[i] < array[i+1] && array.length > 2){
-             	
-             	return null;
+//      }else if(array[i] < array[i+1] && array.length > 2 ||array[i] < array[i+1]){
 
-            }else if(array[i] < array[i+1]){
+//       return null;
 
-             	count = array[i+1] - array[i];
-            }
-	}
-	return count
-}
+//   }else if(array[i] < array[i+1]){
+
+//       count = array[i+1] - array[i];
+//   }
+// }
+// return count
+// }
 var translateRomanNumeral = function(romanNumeral){
 	var DIGIT_VALUES = {
-	  I: 1,
-	  V: 5,
-	  X: 10,
-	  L: 50,
-	  C: 100,
-	  D: 500,
-	  M: 1000
-	};
-    var array = romanNumeral.split("");
-    
+       I: 1,
+       V: 5,
+       X: 10,
+       L: 50,
+       C: 100,
+       D: 500,
+       M: 1000
+   };
+   var array = romanNumeral.split("");
+   var c = 0;
 
     for(var i = 0; i<array.length; i++){//[	X,X]//[]
-   
-    	for(var key in DIGIT_VALUES){
-    		
-    		if(array[i] === key)
-    			array[i]=DIGIT_VALUES[key];
-    	    }
-    	
-    }
 
- return chak(array);
+    	//for(var key in DIGIT_VALUES){
+    		
+
+            if(DIGIT_VALUES[array[i]]<DIGIT_VALUES[array[i+1]]){
+             c = c - DIGIT_VALUES[array[i]]
+
+         }else if(DIGIT_VALUES[array[i]] >= DIGIT_VALUES[array[i+1]] || DIGIT_VALUES[array[i+1]] === undefined){
+            c = c + DIGIT_VALUES[array[i]]
+        }else if(!DIGIT_VALUES[array[i]]){
+         return null
+     }
+
+     return c
+ }
 }
 
 
