@@ -13,9 +13,23 @@ abc(); // should return 'c' on this third call
 abc(); // should return 'a' again on this fourth call
 */
 
-
+//time Q O(n)
 function makeLooper(string){
+	var array = string.split("");
+	var str ="";
+	var i = 0;
+	function conso (){
 
+		if(i === array.length)
+			{ i = 0}
+		for(i ; i< array.length;){
+			str = array[i]
+			i++	
+			return str;
+		}
+	}
+//return the function 
+return conso
 };
 
 
@@ -50,9 +64,15 @@ For example:
 pyramid(750); // should === 12
 pyramid(1666); // should === 16
 */
-
+ // Math.pow(cans,2)	
 function pyramid(cans){
-	
+ var c = 0;
+ var x = 0;
+for(var i = 1; i<cans ; i++){
+ c= Math.pow(i,2)
+ x += c
+}
+return x;
 };
 
 
